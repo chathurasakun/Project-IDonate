@@ -484,10 +484,14 @@
   /* Legacy iOS */ }
 
 .galleryView .item {
-  min-height: 130px;
-  padding-top: 35px; }
+  min-height: 90px;
+  padding-top: 35px; 
+  border-style: solid;
+  border-width: 15px;
+  border-color: white;
+  }
   .galleryView .item .icon:before {
-    font-size: 90px; }
+    font-size: 70px; }
   .galleryView .item p {
     color: white;
     padding-top: 12px; }

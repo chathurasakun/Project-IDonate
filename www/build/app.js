@@ -73,6 +73,20 @@ angular.module('App', ['ionic', 'ngCordova', 'ngAnimate'])
                     controller: 'ItemController'
                 }
             }
+        })
+        .state('app.item2', {
+            url: "/item/form",
+            params: {
+                color: null,
+                icon: null
+            },
+            cache: false,
+            views: {
+                viewContent: {
+                    templateUrl: "templates/form.html",
+                    controller: 'FormController'
+                }
+            }
         });
         
     $urlRouterProvider.otherwise(function ($injector, $location) {
@@ -359,35 +373,56 @@ window.queries = [
         
         $scope.items = [
             {
-                color: "#E47500",
-                icon: "ion-ionic",
-                title: "Hello Ionic"
+                color: "#ED1919",
+                icon: " ion-android-person",
+                title: "My Profile"
             },
             {
-                color: "#5AD863",
-                icon: "ion-social-html5",
-                title: "HTML5"
+                color: "#ED1919",
+                icon: "ion-waterdrop",
+                title: "Blood Request"
             },
             {
-                color: "#F8E548",
-                icon: "ion-social-javascript",
-                title: "JS"
+                color: "#ED1919",
+                icon: " ion-home",
+                title: "Campaings"
             },
             {
-                color: "#AD5CE9",
-                icon: "ion-social-sass",
-                title: "Sass"
+                color: "#ED1919",
+                icon: " ion-android-alarm-clock",
+                title: "Set Reminder"
             },
             {
-                color: "#3DBEC9",
-                icon: "ion-social-css3",
-                title: "CSS3"
+                color: "#ED1919",
+                icon: " ion-android-person-add",
+                title: "Register as a blood donor"
             },
             {
-                color: "#D86B67",
-                icon: "ion-social-angular",
-                title: "Angular"
+                color: "#ED1919",
+                icon: " ion-android-notifications",
+                title: "Notification"
+            },
+             {
+                color: "#ED1919",
+                icon: "ion-ios-email",
+                title: "Report"
+            },
+            {
+                color: "#ED1919",
+                icon: " ion-chatbubble",
+                title: "Feedback"
+            },
+            {
+                color: "#ED1919",
+                icon: "ion-checkmark",
+                title: "Blood Compatibility"
+            },
+            {
+                color: "#ED1919",
+                icon: "ion-location",
+                title: "Blood Bank"
             }
+
         ];
 
         $scope.exitApp = function () {
@@ -486,6 +521,25 @@ window.queries = [
             });
             $state.go('app.gallery');
         }
+
+        $scope.openItem2 = function(){
+        	if($stateParams.title=="Blood Request"){
+		            $state.go('app.item2');
+		        };
+		    }
+    }
+})();
+(function() {
+'use strict';
+
+    angular
+        .module('App')
+        .controller('FormController', FormController);
+
+    
+    function FormController() {
+        
+        
     }
 })();
 (function () {
