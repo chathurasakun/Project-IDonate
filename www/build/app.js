@@ -87,6 +87,20 @@ angular.module('App', ['ionic', 'ngCordova', 'ngAnimate'])
                     controller: 'FormController'
                 }
             }
+        })
+         .state('app.item3', {
+            url: "/item/form",
+            params: {
+                color: null,
+                icon: null
+            },
+            cache: false,
+            views: {
+                viewContent: {
+                    templateUrl: "templates/regform.html",
+                    controller: 'FormController'
+                }
+            }
         });
         
     $urlRouterProvider.otherwise(function ($injector, $location) {
@@ -525,7 +539,9 @@ window.queries = [
         $scope.openItem2 = function(){
         	if($stateParams.title=="Blood Request"){
 		            $state.go('app.item2');
-		        };
+		        }
+		    else if($stateParams.title=="Register as a blood donor")
+		    	{$state.go('app.item3');}
 		    }
     }
 })();
